@@ -1,0 +1,56 @@
+﻿body{
+background-color:blanchedalmond
+
+
+}
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color:#e65472
+
+}
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color:#ac58d6
+   }
+    h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    color:#ff7846
+}
+p {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+ 
+}
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* Dirección normal de los elementos */
+    justify-content: space-between; /* Espacio entre el texto y las imágenes */
+}
+
+.imagen {
+    width: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto;
+    margin-left: 40px; /* Espacio entre las imágenes */
+}
+
+.texto {
+    text-align: left; /* Alinea el texto a la izquierda */
+    flex: 1;
+}
+.personalizado {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    color:#fa3939 ;
+
+   }
+   .song-info {
+    margin-top: 20px;
+    background-color: #ffdede;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}

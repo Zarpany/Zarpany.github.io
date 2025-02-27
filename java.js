@@ -1,3 +1,5 @@
+console.log("JavaScript cargado correctamente");
+
 window.onload = function() {
     // Ejemplo: Agregar una alerta al cargar la página
     alert("¡Bienvenido a la Página de Fans de Laufey!");

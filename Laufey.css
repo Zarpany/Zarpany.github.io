@@ -1,56 +1,159 @@
-﻿body{
-background-color:blanchedalmond
+body {
+            background-color: blanchedalmond;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Merriweather', serif;
+        }
 
+        .title {
+            background-color: #ffb8c6;
+            border: 5px dotted #ff2b55;
+            padding: 10px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+        }
 
-}
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    color:#e65472
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 55px;
+            color: #ff2b55;
+            text-shadow: 2px 2px #fff;
+            margin: 0;
+        }
 
-}
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    color:#ac58d6
-   }
-    h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 27px;
-    color:#ff7846
-}
-p {
-    font-family: 'Merriweather', serif;
-    font-size: 18px;
- 
-}
-.container {
-    display: flex;
-    align-items: center;
-    flex-direction: row; /* Dirección normal de los elementos */
-    justify-content: space-between; /* Espacio entre el texto y las imágenes */
-}
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #ac58d6;
+            border-bottom: 3px solid #ac58d6;
+            display: inline-block;
+        }
 
-.imagen {
-    width: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
-    height: auto;
-    margin-left: 40px; /* Espacio entre las imágenes */
-}
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #ff7846;
+        }
 
-.texto {
-    text-align: left; /* Alinea el texto a la izquierda */
-    flex: 1;
-}
-.personalizado {
-    font-family: 'Georgia', serif;
-    font-size: 24px;
-    color:#fa3939 ;
+        p {
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-   }
-   .song-info {
-    margin-top: 20px;
-    background-color: #ffdede;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-}
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: rgb(255, 207, 134);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .imagen {
+            width: 200px;
+            height: auto;
+            margin-left: 20px;
+            border: 4px solid #fff;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            transform: rotate(-3deg);
+        }
+
+        .imagen:hover {
+            transform: scale(1.1) rotate(0deg);
+            transition: 0.3s;
+        }
+
+        .texto {
+            text-align: left;
+            flex: 1;
+        }
+
+        .personalizado {
+            font-family: 'Georgia', serif;
+            font-size: 32px; /* MAGNIFIED TEXT */
+            font-weight: bold;
+            color: #fa3939;
+            text-shadow: 1px 1px #fff;
+            background-color: #fff1c1;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .song-info {
+            margin-top: 20px;
+            background-color: #ffdede;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ff9e9e;
+            margin-bottom: 30px;
+        }
+
+        .personalizado a {
+            color: #ac58d6;
+            text-decoration: none;
+        }
+
+        .personalizado a:hover {
+            text-decoration: underline;
+            color: #ff2b55;
+        }
+
+        /* JOKE BOXES STYLES - BIGGER AND BOLDER */
+        .chiste {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #d6f5ff;
+            color: #2b2b2b;
+            border: 4px dashed #ac58d6;
+            border-radius: 15px;
+            padding: 25px 35px;
+            margin: 35px auto;
+            max-width: 800px;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .chiste.rosa {
+            background-color: #ffe0ef;
+            border-color: #ff2b55;
+        }
+
+        .chiste.naranja {
+            background-color: #fff2d6;
+            border-color: #ff7846;
+        }
+
+        .chiste.verde {
+            background-color: #e3ffd9;
+            border-color: #58a64c;
+        }
+
+        .chiste.meme {
+            background-color: #f2e3ff;
+            border-color: #8a2be2;
+        }
+        
+        /* FUN BEGINNER WEB ELEMENTS */
+        .highlight {
+            background-color: yellow;
+            color: red;
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+        
+        .marquee-container {
+            background-color: #000;
+            color: #00ff00;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 20px 0;
+            border: 3px solid #00ff00;
+        }

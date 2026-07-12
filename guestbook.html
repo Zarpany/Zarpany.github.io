@@ -29,7 +29,7 @@
     </form>
 
     <div id="messages">
-        <!-- Messages will load here -->
+        
     </div>
 </div>
 
@@ -37,7 +37,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
     import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
-    // Tu configuración real (la que pusiste al final)
+    
     const firebaseConfig = {
         apiKey: "AIzaSyASVvkQ-NNWHz8SoqNWgqHOHRp83noAC_Y",
         authDomain: "web-laufey.firebaseapp.com",
@@ -47,11 +47,11 @@
         appId: "1:522715639543:web:e84226be2820bd4f19edf2"
     };
 
-    // Inicializar
+    
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    // Lógica del formulario
+    
     document.getElementById('guestbook-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const name = document.getElementById('name').value;

@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAN PAGE LAWFEE</title>
     <link rel="stylesheet" href="Laufey.css">
+
+     <style>
+        body { font-family: 'Courier New', monospace; background-color: #fce4ec; color: #4a148c; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border: 3px solid #8e24aa; border-radius: 15px; }
+        h1 { text-align: center; color: #8e24aa; text-transform: uppercase; }
+        input, textarea { width: 100%; margin: 10px 0; padding: 10px; border: 2px solid #e1bee7; border-radius: 5px; box-sizing: border-box; }
+        button { background: #8e24aa; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; }
+        #messages { margin-top: 20px; border-top: 2px dashed #8e24aa; padding-top: 10px; }
+        .msg { background: #f3e5f5; padding: 10px; margin: 10px 0; border-radius: 5px; border-left: 5px solid #8e24aa; }
+        .msg b { color: #6a1b9a; }
+    </style>
 </head>
 <body> 
     
@@ -339,6 +350,64 @@
         </div>
     </center>
     <br><br>
+
+<div class="container">
+    <h1>GUESTBOOK ✍️</h1>
+    <form id="guestbook-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <textarea id="message" placeholder="Leave a message for the community..." required></textarea>
+        <button type="submit">POST MESSAGE</button>
+    </form>
+
+    <div id="messages">
+        <!-- Messages will load here -->
+    </div>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+    // Tu configuración real (la que pusiste al final)
+    const firebaseConfig = {
+        apiKey: "AIzaSyASVvkQ-NNWHz8SoqNWgqHOHRp83noAC_Y",
+        authDomain: "web-laufey.firebaseapp.com",
+        projectId: "web-laufey",
+        storageBucket: "web-laufey.firebasestorage.app",
+        messagingSenderId: "522715639543",
+        appId: "1:522715639543:web:e84226be2820bd4f19edf2"
+    };
+
+    // Inicializar
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Lógica del formulario
+    document.getElementById('guestbook-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const message = document.getElementById('message').value;
+
+        await addDoc(collection(db, "guestbook"), {
+            name: name,
+            message: message,
+            timestamp: serverTimestamp()
+        });
+        document.getElementById('guestbook-form').reset();
+    });
+
+    // Lógica de carga
+    const q = query(collection(db, "guestbook"), orderBy("timestamp", "desc"));
+    onSnapshot(q, (snapshot) => {
+        const msgContainer = document.getElementById('messages');
+        msgContainer.innerHTML = '';
+        snapshot.forEach((doc) => {
+            const data = doc.data();
+            msgContainer.innerHTML += `<div class="msg"><b>${data.name}</b>: ${data.message}</div>`;
+        });
+    });
+</script>
+
 
 </body>
 </html>
